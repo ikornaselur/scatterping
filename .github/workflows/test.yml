@@ -39,7 +39,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
 
     - name: Test with pytest
-      run: poetry run pytest
+      run: poetry run pytest -vs
 
   lint:
     runs-on: ubuntu-latest
