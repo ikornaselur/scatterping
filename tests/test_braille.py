@@ -57,13 +57,13 @@ def test_braille_empty() -> None:
 
 
 def test_braille_two_columns() -> None:
-    braille = Braille([[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])
-    assert braille.get_frame() == "⣿⣿"
+    braille = Braille([[1, 0, 1, 0], [1, 0, 0, 1], [0, 1, 1, 0], [0, 1, 0, 1]])
+    assert braille.get_frame() == "⢣⢕"
 
 
 def test_braille_two_rows() -> None:
-    braille = Braille([[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]])
-    assert braille.get_frame() == "⣿\n⣿"
+    braille = Braille([[1, 0], [1, 0], [0, 1], [0, 1], [1, 0], [0, 1], [1, 0], [0, 1]])
+    assert braille.get_frame() == "⢣\n⢕"
 
 
 def test_braille_diagonal() -> None:
@@ -79,7 +79,7 @@ def test_braille_diagonal() -> None:
             [0, 0, 0, 0, 0, 0, 0, 1],
         ]
     )
-    assert braille.get_frame() == "⠑⢄  \n  ⠑⢄"
+    assert braille.get_frame() == "⠑⢄⠀⠀\n⠀⠀⠑⢄"
 
 
 """

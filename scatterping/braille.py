@@ -18,7 +18,7 @@ class Braille:
         width = math.ceil(len(pixel_map[0]) / 2)
         height = math.ceil(len(pixel_map) / 4)
 
-        self.char_map = [[0] * width] * height
+        self.char_map = [[0 for _ in range(width)] for _ in range(height)]
 
         for y, row in enumerate(pixel_map):
             for x, pixel in enumerate(row):
